@@ -1,0 +1,23 @@
+# General vCenter data
+user = "FILL_ME_IN" # vSphere User
+
+password = "FILL_ME_IN" # vSphere Password
+
+vsphere_server = "FILL_ME_IN" # vSphere URL (IP, hostname or FQDN)
+
+datacenter = "FILL_ME_IN" # vSphere datacenter
+
+datastore = "FILL_ME_IN" # vSphere datastore
+
+resource_pool = "FILL_ME_IN" # vSphere Resourcepool
+
+# Virtual Machine configuration
+name = "FILL_ME_IN" # name of the virtual machine
+
+template = "FILL_ME_IN" # chosen name of the template
+
+network = "FILL_ME_IN" # network for the VM to reside in
+
+cpus = 2 # CPU cores of the VM
+
+memory = 1024 # Memory of the VM in Mb
