@@ -1,22 +1,22 @@
 # General vCenter data
-user = "" # VC User
+user = "FILL_ME_IN" # VC User
 
-password = "" # vSphere Password
+password = "FILL_ME_IN" # vSphere Password
 
-vsphere_server = "" # VC URL (IP, hostname or FQDN)
+vsphere_server = "FILL_ME_IN" # VC URL (IP, hostname or FQDN)
 
-datacenter = "" # vSphere datacenter
+datacenter = "FILL_ME_IN" # vSphere datacenter
 
-datastore = "" # vSphere datastore
+datastore = "FILL_ME_IN" # vSphere datastore
 
-resource_pool = "" # vSphere Resourcepool
+resource_pool = "FILL_ME_IN" # vSphere Resourcepool
 
 # Virtual Machine configuration
-name = "" # name of the virtual machine
+name = "FILL_ME_IN" # name of the virtual machine
 
-template = "" # chosen name of the template
+template = "FILL_ME_IN" # chosen name of the template
 
-network = "" # network for the VM to reside in
+network = "FILL_ME_IN" # network for the VM to reside in
 
 cpus = 4 # CPU cores of the VM
 
@@ -24,13 +24,13 @@ memory = 8192 # Memory of the VM in Mb
 
 vm_numbers = 4 # VM numbers you want to create
 
-virtual_machine_network_address = "" # VM cidr ex: 192.168.1.0/24
+virtual_machine_network_address = "FILL_ME_IN" # VM cidr ex: 192.168.1.0/24
 
-virtual_machine_ip_address_start = "" # ex: 100
+virtual_machine_ip_address_start = "FILL_ME_IN" # ex: 100
 
-virtual_machine_domain = ""
+virtual_machine_domain = "FILL_ME_IN"
 
-virtual_machine_network_gateway = ""
+virtual_machine_network_gateway = "FILL_ME_IN"
 
 virtual_machine_dns_servers = [
   "8.8.8.8",
