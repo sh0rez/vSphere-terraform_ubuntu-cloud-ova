@@ -1,3 +1,7 @@
+# Add openshift install using terraform trigger ansible
+Need install ubuntu 16.04 LTS template
+Trick: Add this line **After=dbus.service** in /lib/systemd/system/open-vm-tools.service [Unit] section
+
 # vSphere terraform unify os for customize ip hostname setting
 This repository fork from sh0rez/vSphere-terraform_ubuntu-cloud-ova
 

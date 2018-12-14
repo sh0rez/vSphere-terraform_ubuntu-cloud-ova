@@ -58,5 +58,3 @@ variable "virtual_machine_domain" {
 variable "virtual_machine_ip_address_start" {
   type = "string"
 }
-variable "virtual_machine_network" {
-}
