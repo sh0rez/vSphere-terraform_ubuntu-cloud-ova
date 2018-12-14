@@ -22,7 +22,8 @@ variable "resource_pool" {}
 variable "name" {}
 
 # Name of OVA template (chosen in import process)
-variable "template" {}
+variable "template_centos" {}
+variable "template_ubuntu" {}
 
 # VM Network 
 variable "network" {}
@@ -31,9 +32,11 @@ variable "network" {}
 variable "cpus" {}
 
 # VM Memory in MB
-variable "memory" {}
+variable "memory" {
+}
 # VM numbers
-variable "vm_numbers" {}
+variable "vm_numbers" {
+}
 
 // The network address for the virtual machines, in the form of 10.0.0.0/24.
 variable "virtual_machine_network_address" {
@@ -54,9 +57,4 @@ variable "virtual_machine_domain" {
 // 10.0.0.101, and 10.0.0.102.
 variable "virtual_machine_ip_address_start" {
   type = "string"
-}
-
-// The DNS servers for the network the virtual machines reside in.
-variable "virtual_machine_dns_servers" {
-  type = "list"
 }
