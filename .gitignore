@@ -12,3 +12,4 @@ crash.log
 
 # variables
 terraform.tfvars
+*.swp
