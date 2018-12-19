@@ -1,6 +1,6 @@
 locals {
     at_ips = "${var.ns_ip_list[0]}"
-    at_hosts = "'@'"
+    at_hosts = "@"
 }
 
 data "template_file" "ns_at"{
