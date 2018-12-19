@@ -20,3 +20,24 @@ module "infra" {
   virtual_machine_domain           = "${var.virtual_machine_domain}"
 }
 
+module "ns" {
+  source                = "./modules/ns"
+  ns_ip_list            = "${module.infra.ns_ip_list}"
+  ns_hostname_list      = "${module.infra.ns_hostname_list}"
+  master_ip_list        = "${module.infra.master_ip_list}"
+  master_hostname_list  = "${module.infra.master_hostname_list}"
+  node_ip_list          = "${module.infra.node_ip_list}"
+  node_hostname_list    = "${module.infra.node_hostname_list}"
+  virtual_machine_domain= "${var.virtual_machine_domain}"
+  public_hostname       = "${var.name}"
+}
+
+output "dns_server_ip" {
+    value = "${module.infra.dns_server_ip}"
+}
+output "master_ip" {
+    value = "${module.infra.master_ip}"
+}
+output "node_ip" {
+    value = "${module.infra.node_ip}"
+}

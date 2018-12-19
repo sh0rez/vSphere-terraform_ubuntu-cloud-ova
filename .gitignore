@@ -13,3 +13,5 @@ crash.log
 # variables
 terraform.tfvars
 *.swp
+resources/
+tfplan
