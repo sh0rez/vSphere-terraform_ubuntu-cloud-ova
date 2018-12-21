@@ -4,19 +4,20 @@
   become: true
   vars:
     bind_zone_domains:
-      - name: dummy_domain
+      - name: dummy.io
         hostmaster_email: "admin"
         networks:
-        - "dummy_network"
+        - "dummy"
         hosts:
           - name: dummy
             ip: 127.0.0.1
-        name_servers: ["dummy_ns1", "dummy_ns2"]
+        name_servers: ["dummy", "dummy"]
     
     # List of acls.
     bind_acls:
       - name: acl1
         match_list:
+          - 172.31.16.0/24
           - 172.31.17.0/24
           - 172.31.86.0/24
     
@@ -63,7 +64,7 @@
     bind_zone_time_to_expire: "1W"
     bind_zone_minimum_ttl: "1D"
     
-    bind_zone_master_server_ip: "dummy_master_ip"
+    bind_zone_master_server_ip: "dummy"
     
     # Custom location for master zone files
     bind_zone_dir: "/etc/bind"

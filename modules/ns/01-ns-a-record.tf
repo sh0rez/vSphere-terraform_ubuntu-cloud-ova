@@ -25,6 +25,6 @@ JSON
 
 resource "null_resource" "export_rendered_template" {
   provisioner "local-exec" {
-    command = "cat > ${path.module}/resources/ns1.json <<EOL\n${data.template_file.wrapper.rendered}\nEOL"
+    command = "cat > ${path.module}/resources/ns-1.json <<EOL\n${data.template_file.wrapper.rendered}\nEOL"
   }
 }

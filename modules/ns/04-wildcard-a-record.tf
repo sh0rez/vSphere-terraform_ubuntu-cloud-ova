@@ -1,4 +1,3 @@
-/*
 locals {
     wildcard_ip = "${var.master_ip_list[0]}"
     wildcard_host = "*.${var.public_hostname}"
@@ -25,7 +24,6 @@ JSON
 
 resource "null_resource" "export_rendered_template4" {
   provisioner "local-exec" {
-    command = "cat > ${path.module}/resources/ns4.json <<EOL\n${data.template_file.wrapper4.rendered}\nEOL"
+    command = "cat > ${path.module}/resources/ns-4.json <<EOL\n${data.template_file.wrapper4.rendered}\nEOL"
   }
 }
-*/
