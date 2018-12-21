@@ -72,4 +72,4 @@
     bind_zone_file_mode: "0640"
 
   roles:
-    - bind
+    - bertvv.bind
