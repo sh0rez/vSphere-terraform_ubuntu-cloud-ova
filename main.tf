@@ -30,6 +30,7 @@ module "ns" {
   node_hostname_list    = "${module.infra.node_hostname_list}"
   virtual_machine_domain= "${var.virtual_machine_domain}"
   public_hostname       = "${var.name}"
+  network_prefix        = "${var.virtual_machine_network}"
 }
 
 output "dns_server_ip" {

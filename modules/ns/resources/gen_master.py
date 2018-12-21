@@ -67,16 +67,18 @@ def modify_ns(yaml_data, json_data):
 
 def modify_domain(yaml_data, json_data):
     yaml_data[0]['vars']['bind_zone_domains'][0]['name'] = \
-        str(json_data[0]['data'])
+        json_data[0]['data']
     return yaml_data
 
 def modify_master_ip(yaml_data, json_data):
     yaml_data[0]['vars']['bind_zone_master_server_ip'] = \
-        str(json_data[0]['data'])
+        json_data[0]['data']
     return yaml_data
 
 def modify_network(yaml_data, json_data):
-    pass
+    yaml_data[0]['vars']['bind_zone_domains'][0]['networks'] = \
+        json_data[0]['data']
+    return yaml_data
 
 def get_host_ip_dict(json_data):
     hosts = get_hosts(json_data)
@@ -100,6 +102,7 @@ def main(terraform_json_list):
     ns_host_file = "nshosts.json"
     domain_file = "nsdomain.json"
     master_ip_file = "nsip.json"
+    network_file = "nsnetwork.json"
     template_yaml_data = read_yaml(master_template_yaml_file)
     yaml_data = None
 
@@ -120,8 +123,8 @@ def main(terraform_json_list):
     json_data = read_terraform_json(domain_file)
     yaml_data = modify_domain(yaml_data, json_data)
 
-    #json_data = read_terraform_json(network_file)
-    #yaml_data = modify_network(yaml_data, json_data)
+    json_data = read_terraform_json(network_file)
+    yaml_data = modify_network(yaml_data, json_data)
 
     json_data = read_terraform_json(master_ip_file)
     yaml_data = modify_master_ip(yaml_data, json_data)
