@@ -12,7 +12,7 @@ resource "null_resource" "okd"{
       "bash -x resources/install_req.sh",
       "sleep 1",
       "chmod +x resources/install_ansible.sh",
-      "bash -x resources/install_ansible.sh",
+      "tmux new-session -d -s deploycluster ~/resources/install_ansible.sh",
       "sleep 1",
     ]
   }
