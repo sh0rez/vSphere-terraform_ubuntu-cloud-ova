@@ -10,7 +10,7 @@ module "infra" {
   user            = "${var.user}"
   template_centos = "${var.template_centos}"
   template_ubuntu = "${var.template_ubuntu}"
-  vm_numbers      = "${var.vm_numbers}"
+  vm_numbers      = "${var.nodes}"
   password        = "${var.password}"
   datacenter      = "${var.datacenter}"
   network         = "${var.network}"

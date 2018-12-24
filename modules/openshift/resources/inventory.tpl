@@ -20,8 +20,8 @@ openshift_docker_insecure_registries=172.30.0.0/16
 # use HTPasswd for authentication
 openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 'challenge': 'true', 'kind': 'HTPasswdPasswordIdentityProvider'}]
 # define default sub-domain for Master node
-openshift_public_hostname=${public_hostname}
-openshift_master_default_subdomain=${public_hostname}
+openshift_public_hostname=${public_hostname}.${domain}
+openshift_master_default_subdomain=${public_hostname}.${domain}
 # allow unencrypted connection within cluster
 openshift_master_api_port=8443
 openshift_master_console_port=8443
