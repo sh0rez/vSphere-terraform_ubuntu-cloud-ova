@@ -34,8 +34,8 @@ variable "cpus" {}
 # VM Memory in MB
 variable "memory" {
 }
-# VM numbers
-variable "vm_numbers" {
+# cluster_node_number
+variable "nodes" {
 }
 
 // The network address for the virtual machines, in the form of 10.0.0.0/24.

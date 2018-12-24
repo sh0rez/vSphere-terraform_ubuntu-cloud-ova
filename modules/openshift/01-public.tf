@@ -3,6 +3,7 @@ data "template_file" "hostname" {
   vars {
     public_hostname = "${var.public_hostname}"
     master_hostname = "${var.master_hostname}"
+    domain = "${var.domain}"
   }
 }
 
