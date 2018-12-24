@@ -19,3 +19,4 @@ variable "node_hostname_list" {
 
 variable "virtual_machine_domain" {}
 variable "public_hostname" {}
+variable "network_prefix" {}

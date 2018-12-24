@@ -13,5 +13,12 @@ crash.log
 # variables
 terraform.tfvars
 *.swp
-resources/
+master.yml
+slave.yml
+hosts.master
+hosts.slave
+ns*.json
 tfplan
+config
+*.sh
+*.tmp

@@ -30,6 +30,19 @@ module "ns" {
   node_hostname_list    = "${module.infra.node_hostname_list}"
   virtual_machine_domain= "${var.virtual_machine_domain}"
   public_hostname       = "${var.name}"
+  network_prefix        = "${var.virtual_machine_network}"
+}
+
+module "openshift" {
+  source                = "./modules/openshift"
+  public_hostname       = "${var.name}"
+  master_hostname       = "${module.infra.master_hostname_list[0]}"
+  master_ip             = "${module.infra.master_ip_list[0]}"
+  node_hostname_list    = "${module.infra.node_hostname_list}"
+  node_ip_list          = "${module.infra.node_ip_list}"
+  domain                = "${var.virtual_machine_domain}"
+
+
 }
 
 output "dns_server_ip" {
