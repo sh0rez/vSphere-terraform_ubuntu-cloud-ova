@@ -12,3 +12,5 @@ else
 fi
 sshpass -f password.txt ssh-copy-id '-o StrictHostKeyChecking=no' elsvent@${ns1}
 sshpass -f password.txt ssh-copy-id '-o StrictHostKeyChecking=no' elsvent@${ns2}
+sshpass -f password.txt ssh '-o StrictHostKeyChecking=no' elsvent@${ns2} sudo apt update
+sshpass -f password.txt ssh '-o StrictHostKeyChecking=no' elsvent@${ns2} sudo apt install python -y
