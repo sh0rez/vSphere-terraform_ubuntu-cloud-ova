@@ -88,48 +88,23 @@ def get_host_ip_dict(json_data):
 def write_back_yaml(data, filename):
     with open(filename, 'w') as output_yaml:
         yamldump(data, output_yaml)
-def get_terraform_json():
-    result = []
-    for i in range(1, 10):
-        if path.isfile("ns-{0}.json".format(i)):
-            result.append("ns-{0}.json".format(i))
-    return result
+def main():
 
-def main(terraform_json_list):
-
-    master_yaml_file = "master.yml"
-    master_template_yaml_file = "master_tpl.yml"
-    ns_host_file = "nshosts.json"
+    master_yaml_file = "slave.yml"
+    master_template_yaml_file = "slave_tpl.yml"
     domain_file = "nsdomain.json"
     master_ip_file = "nsip.json"
     network_file = "nsnetwork.json"
-    template_yaml_data = read_yaml(master_template_yaml_file)
-    yaml_data = None
 
-    for filename in terraform_json_list:
-        json_data = read_terraform_json(filename)
-        host_ip_dict = get_host_ip_dict(json_data)
 
-        if yaml_data:
-            yaml_data = insert_hosts(host_ip_dict, yaml_data)
-        else:
-            yaml_data = insert_hosts(host_ip_dict, template_yaml_data)
-
-    yaml_data = remove_dummy_host(yaml_data)
-
-    json_data = read_terraform_json(ns_host_file)
-    yaml_data = modify_ns(yaml_data, json_data)
+    yaml_data = read_yaml(master_template_yaml_file)
 
     json_data = read_terraform_json(domain_file)
     yaml_data = modify_domain(yaml_data, json_data)
-
-    json_data = read_terraform_json(network_file)
-    yaml_data = modify_network(yaml_data, json_data)
 
     json_data = read_terraform_json(master_ip_file)
     yaml_data = modify_master_ip(yaml_data, json_data)
     write_back_yaml(yaml_data, master_yaml_file)
 
 if __name__ == '__main__':
-    terraform_json_list = get_terraform_json()
-    main(terraform_json_list)
+    main()

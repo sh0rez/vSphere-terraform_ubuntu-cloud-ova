@@ -6,13 +6,7 @@
     bind_zone_domains:
       - name: dummy.io
         hostmaster_email: "admin"
-        networks:
-        - "dummy"
-        hosts:
-          - name: dummy
-            ip: 127.0.0.1
-        name_servers: ["dummy", "dummy"]
-    
+
     # List of acls.
     bind_acls:
       - name: acl1
