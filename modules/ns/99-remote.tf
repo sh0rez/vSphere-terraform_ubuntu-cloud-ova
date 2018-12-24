@@ -1,4 +1,4 @@
-resource "null_resource" "master"{
+resource "null_resource" "ns_install"{
   provisioner "file"{
     source  = "${path.module}/resources"
     destination = "~/"

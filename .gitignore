@@ -20,4 +20,5 @@ hosts.slave
 ns*.json
 tfplan
 config
-install_ansible.sh
+*.sh
+*.tmp
