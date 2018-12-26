@@ -18,10 +18,24 @@ Note: if you are using CentOS, sometime may failed because /etc/redhat-release n
 There is a trick hint: for me using **Red Hat Enterprise Linux Server release 7.0 (Maipo)**
 , it will work and not effect function.
 
+# OKD template
+
+Change terraform.tfvars for your setting
 
 Install terraform via below website
 
 https://www.terraform.io/downloads.html
+
+After install terraform execute to construct your okd set
+```
+terraform init
+make
+```
+
+Use below command to destroy okd set
+```
+make destroy
+```
 
 ** if you deploy failed **
 go to master
