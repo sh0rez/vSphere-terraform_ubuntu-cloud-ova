@@ -1,38 +1,35 @@
 # General vCenter data
-user = "FILL_ME_IN" # VC User
+user = "FILL ME" # vSphere User
 
-password = "FILL_ME_IN" # vSphere Password
+password = "FILL ME" # vSphere Password
 
-vsphere_server = "FILL_ME_IN" # VC URL (IP, hostname or FQDN)
+vsphere_server = "FILL ME" # vSphere URL (IP, hostname or FQDN)
 
-datacenter = "FILL_ME_IN" # vSphere datacenter
+datacenter = "FILL ME" # vSphere datacenter
 
-datastore = "FILL_ME_IN" # vSphere datastore
+datastore = "FILL ME" # vSphere datastore
 
-resource_pool = "FILL_ME_IN" # vSphere Resourcepool
+resource_pool = "FILL ME" # vSphere Resourcepool
 
-# Virtual Machine configuration
-name = "FILL_ME_IN" # name of the virtual machine
+name = "ex:prookd" # name of okd
 
-template = "FILL_ME_IN" # chosen name of the template
+template_centos = "CentOS_template84" # chosen name of the template
+template_ubuntu = "ubuntu_template84" # chosen name of the template
 
-network = "FILL_ME_IN" # network for the VM to reside in
+network = "VM Network" # network for the VM to reside in
 
 cpus = 4 # CPU cores of the VM
 
 memory = 8192 # Memory of the VM in Mb
 
-vm_numbers = 4 # VM numbers you want to create
+nodes = 5 # node number
 
-virtual_machine_network_address = "FILL_ME_IN" # VM cidr ex: 192.168.1.0/24
+virtual_machine_network_address = "172.31.17.0/24" # VM cidr
 
-virtual_machine_ip_address_start = "FILL_ME_IN" # ex: 100
+virtual_machine_network = "172.31.17" # for nameserver setting
 
-virtual_machine_domain = "FILL_ME_IN"
+virtual_machine_ip_address_start = "161"
 
-virtual_machine_network_gateway = "FILL_ME_IN"
+virtual_machine_domain = "FILL ME" # ex ailab.ai
 
-virtual_machine_dns_servers = [
-  "8.8.8.8",
-  "8.8.4.4",
-]
+virtual_machine_network_gateway = "172.31.17.254"
