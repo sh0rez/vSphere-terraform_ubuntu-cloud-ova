@@ -18,6 +18,15 @@ Note: if you are using CentOS, sometime may failed because /etc/redhat-release n
 There is a trick hint: for me using **Red Hat Enterprise Linux Server release 7.0 (Maipo)**
 , it will work and not effect function.
 
+** if you deploy failed **
+go to master
+```
+ansible-playbook -i inventory.ini playbooks/deploy_cluster.yml
+```
+for lab template password
+okd node/master password: root/abc=123
+nameserver password: elsvent/password
+
 # License :book:
 Released into the public domain under terms of the [UNLICENSE](/LICENSE).
 Any PR will be welcome.:)
