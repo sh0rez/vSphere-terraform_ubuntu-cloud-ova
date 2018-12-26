@@ -21,6 +21,34 @@ There is a trick hint: for me using **Red Hat Enterprise Linux Server release 7.
 ~~**It is [part of a blog post](https://shorez.de/2018/deploying-ubuntu-cloud-images-to-vsphere-using-terraform/) , consider reading it for further instructions**~~
 I do not have a blog anymore, so the [post is included in this repository](post/README.md)
 
+# OKD template
+
+Change terraform.tfvars for your setting
+
+Install terraform via below website
+
+https://www.terraform.io/downloads.html
+
+After install terraform execute to construct your okd set
+```
+terraform init
+make
+```
+
+Use below command to destroy okd set
+```
+make destroy
+```
+
+** if you deploy failed **
+go to master
+```
+ansible-playbook -i inventory.ini playbooks/deploy_cluster.yml
+```
+for lab template password
+okd node/master password: root/abc=123
+nameserver password: elsvent/password
+
 # License :book:
 Released into the public domain under terms of the [UNLICENSE](/LICENSE).
 Any PR will be welcome.:)
