@@ -18,6 +18,11 @@ Note: if you are using CentOS, sometime may failed because /etc/redhat-release n
 There is a trick hint: for me using **Red Hat Enterprise Linux Server release 7.0 (Maipo)**
 , it will work and not effect function.
 
+
+Install terraform via below website
+
+https://www.terraform.io/downloads.html
+
 ** if you deploy failed **
 go to master
 ```
