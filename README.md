@@ -23,7 +23,7 @@ I do not have a blog anymore, so the [post is included in this repository](post/
 
 # OKD template
 
-Change terraform.tfvars for your setting
+Change terraform.tfvars.example for your setting than cp to terraform.tfvars
 
 Install terraform via below website
 
@@ -40,9 +40,11 @@ Use below command to destroy okd set
 make destroy
 ```
 
-** if you deploy failed **
+**if you deploy failed**
 go to master
+
 ```
+cd openshift-ansible
 ansible-playbook -i inventory.ini playbooks/deploy_cluster.yml
 ```
 for lab template password
