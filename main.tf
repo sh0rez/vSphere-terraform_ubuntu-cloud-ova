@@ -54,3 +54,6 @@ output "master_ip" {
 output "node_ip" {
     value = "${module.infra.node_ip}"
 }
+output "console address" {
+    value = "https://${var.name}.${var.virtual_machine_domain}:8443"
+}
