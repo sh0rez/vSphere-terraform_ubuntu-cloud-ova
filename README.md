@@ -47,9 +47,18 @@ go to master
 cd openshift-ansible
 ansible-playbook -i inventory.ini playbooks/deploy_cluster.yml
 ```
+
+Take a look into openshift-ansible.log wait the deploy complete
+Using below command add a cluster-admin user
+```
+htpasswd /etc/origin/master/htpasswd <user>
+oc adm policy add-cluster-role-to-user cluster-admin <user>
+```
+
 for lab template password
 okd node/master password: root/abc=123
 nameserver password: elsvent/password
+
 
 # License :book:
 Released into the public domain under terms of the [UNLICENSE](/LICENSE).
