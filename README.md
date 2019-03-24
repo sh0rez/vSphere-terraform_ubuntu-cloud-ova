@@ -13,6 +13,9 @@ Some point you may need to know before using vSphere plugin
 Note: if you are using CentOS, sometime may failed because /etc/redhat-release not match.
 There is a trick hint: for me using **Red Hat Enterprise Linux Server release 7.0 (Maipo)**
 , it will work and not effect function.
+=======
+~~**It is [part of a blog post](https://shorez.de/2018/deploying-ubuntu-cloud-images-to-vsphere-using-terraform/) , consider reading it for further instructions**~~
+I do not have a blog anymore, so the [post is included in this repository](post/README.md)
 
 # License :book:
 Released into the public domain under terms of the [UNLICENSE](/LICENSE).
