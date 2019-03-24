@@ -12,3 +12,14 @@ crash.log
 
 # variables
 terraform.tfvars
+*.swp
+master.yml
+slave.yml
+hosts.master
+hosts.slave
+ns*.json
+tfplan
+config
+install_key.sh
+modules/ns/resources/install_ansible.sh
+*.tmp

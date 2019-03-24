@@ -1,0 +1,62 @@
+# roles/bind/defaults/main.yml
+---
+- hosts: all
+  become: true
+  vars:
+    bind_zone_domains:
+      - name: dummy.io
+        hostmaster_email: "admin"
+
+    # List of acls.
+    bind_acls:
+      - name: acl1
+        match_list:
+          - 172.31.16.0/24
+          - 172.31.17.0/24
+          - 172.31.86.0/24
+    
+    # List of IPv4 address of the network interface(s) to listen on. Set to "any"
+    # to listen on all interfaces
+    bind_listen_ipv4:
+      - "any"
+    
+    # List of IPv6 address of the network interface(s) to listen on.
+    bind_listen_ipv6:
+      - "any"
+    
+    # List of hosts that are allowed to query this DNS server.
+    bind_allow_query:
+      - "any"
+    
+    # Determines whether recursion should be allowed. Typically, an authoritative
+    # name server should have recursion turned OFF.
+    bind_recursion: true
+    bind_allow_recursion:
+      - "any"
+    
+    # Allows BIND to be set up as a caching name server
+    bind_forward_only: false
+    
+    # List of name servers to forward DNS requests to.
+    bind_forwarders: 
+      - '8.8.8.8'
+      - '8.8.4.4'
+    
+    # DNS round robin order (random or cyclic)
+    bind_rrset_order: "random"
+    
+    # DNSSEC configuration
+    bind_dnssec_enable: true
+    bind_dnssec_validation: true
+    
+    bind_extra_include_files: []
+    
+    bind_zone_master_server_ip: "dummy"
+    
+    # Custom location for master zone files
+    bind_zone_dir: "/etc/bind"
+    # File mode for master zone files (needs to be something like 0660 for dynamic updates)
+    bind_zone_file_mode: "0640"
+
+  roles:
+    - bertvv.bind
