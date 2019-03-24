@@ -22,8 +22,7 @@ variable "resource_pool" {}
 variable "name" {}
 
 # Name of OVA template (chosen in import process)
-variable "template_centos" {}
-variable "template_ubuntu" {}
+variable "template" {}
 
 # VM Network 
 variable "network" {}
@@ -32,31 +31,4 @@ variable "network" {}
 variable "cpus" {}
 
 # VM Memory in MB
-variable "memory" {
-}
-# cluster_node_number
-variable "nodes" {
-}
-
-// The network address for the virtual machines, in the form of 10.0.0.0/24.
-variable "virtual_machine_network_address" {
-  type = "string"
-}
-
-variable "virtual_machine_network_gateway" {
-  type = "string"
-}
-
-variable "virtual_machine_domain" {
-  type = "string"
-}
-
-// The last octect that serves as the start of the IP addresses for the virtual
-// machines. Given the default value here of 100, if the network address is
-// 10.0.0.0/24, the 3 virtual machines will be assigned addresses 10.0.0.100,
-// 10.0.0.101, and 10.0.0.102.
-variable "virtual_machine_ip_address_start" {
-  type = "string"
-}
-variable "virtual_machine_network" {
-}
+variable "memory" {}

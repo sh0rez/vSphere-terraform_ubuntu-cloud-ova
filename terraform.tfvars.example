@@ -1,35 +1,23 @@
 # General vCenter data
-user = "FILL ME" # vSphere User
+user = "FILL_ME_IN" # vSphere User
 
-password = "FILL ME" # vSphere Password
+password = "FILL_ME_IN" # vSphere Password
 
-vsphere_server = "FILL ME" # vSphere URL (IP, hostname or FQDN)
+vsphere_server = "FILL_ME_IN" # vSphere URL (IP, hostname or FQDN)
 
-datacenter = "FILL ME" # vSphere datacenter
+datacenter = "FILL_ME_IN" # vSphere datacenter
 
-datastore = "FILL ME" # vSphere datastore
+datastore = "FILL_ME_IN" # vSphere datastore
 
-resource_pool = "FILL ME" # vSphere Resourcepool
+resource_pool = "FILL_ME_IN" # vSphere Resourcepool
 
-name = "ex:prookd" # name of okd
+# Virtual Machine configuration
+name = "FILL_ME_IN" # name of the virtual machine
 
-template_centos = "CentOS_template84" # chosen name of the template
-template_ubuntu = "ubuntu_template84" # chosen name of the template
+template = "FILL_ME_IN" # chosen name of the template
 
-network = "VM Network" # network for the VM to reside in
+network = "FILL_ME_IN" # network for the VM to reside in
 
-cpus = 4 # CPU cores of the VM
+cpus = 2 # CPU cores of the VM
 
-memory = 8192 # Memory of the VM in Mb
-
-nodes = 5 # node number
-
-virtual_machine_network_address = "172.31.17.0/24" # VM cidr
-
-virtual_machine_network = "172.31.17" # for nameserver setting
-
-virtual_machine_ip_address_start = "161"
-
-virtual_machine_domain = "FILL ME" # ex ailab.ai
-
-virtual_machine_network_gateway = "172.31.17.254"
+memory = 1024 # Memory of the VM in Mb
