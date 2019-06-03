@@ -1,5 +1,3 @@
-**Attention**: I have lost the images for this post. As I do not own vCenter at the moment, I can not reproduce them. Sorry!
-
 # Deploying Ubuntu Cloud Images to vSphere using Terraform
 
 It's fairly easy to deploy cloud-init configurable Ubuntu Cloud OVA Images to vSphere (standalone ESXi or vCenter, using Terraform. The following post illustrates how to achieve this, all project files are provided on [GitHub here](https://github.com/sh0rez/vSphere-terraform_ubuntu-cloud-ova).
@@ -31,7 +29,7 @@ Before creating actual instances, the template (OVA) must be uploaded to vSphere
 First, head over to [cloud-images.ubuntu.com](https://cloud-images.ubuntu.com/), select your version of Ubuntu (sticking with `16.04 Xenial` release here, altough there should be no difference when using `18.04 Bionic` or any other Ubuntu version), select the **`current`** release (or if you know what you're doing something else) and download the file called something similar to `VERSION-server-cloudimg-amd64.ova`
 
 
-![ubuntu-cloud-ova-download](/ubuntu-cloud-ova-download.png)
+![ubuntu-cloud-ova-download](./img/ubuntu-cloud-ova-download.png)
 
 
 Once we have this file, we can upload it to our vSphere. This is shown using vCenter 6.7 here:
@@ -39,13 +37,13 @@ Once we have this file, we can upload it to our vSphere. This is shown using vCe
 **1.** First, right click the datacenter or single host and select `Deploy OVF Template`:
 
 
-![deploy-ova-vcenter](/deploy-ova-vcenter.png)
+![deploy-ova-vcenter](./img/deploy-ova-vcenter.png)
 
 
 After that, upload the downloaded OVA File and hit next:
 
 
-![deploy_ova_step1](/deploy_ova_step1.png)
+![deploy_ova_step1](./img/deploy_ova_step1.png)
 
 
 **2.** Once uploaded, select where to store the template and name it appropriately. We need that name later on.
@@ -53,7 +51,7 @@ After that, upload the downloaded OVA File and hit next:
 **3, 4, 5.** Select your compute resource in step 3 and review your setup in step 4, continue with step 5, storage. The only thing here to do is select `Thin Provision` as disk format, as it saves (a lot of) storage.
 
 
-![deploy_ova_step5](/deploy_ova_step5.png)
+![deploy_ova_step5](./img/deploy_ova_step5.png)
 
 
 **6. & 7.** What you select in steps 6 and 7 doesn't matter as it is going to be overwritten by Terraform anyways. Just leave the default values here, that's fine.
@@ -167,12 +165,13 @@ $ terraform apply
 This takes around 1 minute and completes with a nice green message. Your new code-declarated VM is ready! Hooray 🎉. Just take a look at it in the web-interface: 
 
 
-![terraformed_vm_final](/terraformed_vm_final.png)
+![terraformed_vm_final](./img/terraformed_vm_final.png)
 
 
 It's just another virtual machine.
 
 ## Next steps
 How to continue? Here are a few tips to get further on the topic:
+
 1. Get familiar with cloud-init. To unleash the whole power of this project, you need to know how to configure the VM. Good examples are in the [official docs](https://cloudinit.readthedocs.io/en/latest/topics/examples.html)
 2. Read the [Terraform vSphere provider docs](https://www.terraform.io/docs/providers/vsphere/index.html). Every capability of the provider is explained there.
