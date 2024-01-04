@@ -175,3 +175,43 @@ How to continue? Here are a few tips to get further on the topic:
 
 1. Get familiar with cloud-init. To unleash the whole power of this project, you need to know how to configure the VM. Good examples are in the [official docs](https://cloudinit.readthedocs.io/en/latest/topics/examples.html)
 2. Read the [Terraform vSphere provider docs](https://www.terraform.io/docs/providers/vsphere/index.html). Every capability of the provider is explained there.
+
+## Troubleshooting
+
+### Metadata not applied
+
+Based on this artice [from VMWare Community](https://communities.vmware.com/t5/VMware-PowerCLI-Discussions/Set-fixed-IP-in-ova/m-p/484260/highlight/true#M13864) there's an issue that *User-data cannot change an instance’s network configuration*. Including network part in the cloud-init setup will cause all configuration is skipped.
+
+As a workaround include your network setup as a file like this:
+
+```tf
+#cloud-config
+write_files:
+- encoding: base64
+   content: "${base64encode(file("metadata.yml"))}"
+   path: /etc/netplan/50-cloud-init.yaml
+runcmd:
+- netplan apply
+```
+
+and `metadata.yml` may look like this:
+
+```yaml
+network:
+version: 2
+ethernets:
+   ens192:
+    ens192:
+      dhcp4: false
+      dhcp6: false
+      addresses:
+        - 192.168.1.111
+      routes:
+      - to: default
+        via: 192.168.1.1
+      nameservers:
+        addresses:
+          - 1.1.1.1
+```
+
+
